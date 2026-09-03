@@ -26,7 +26,9 @@ import {
 } from "lucide-react";
 import "./App.css";
 
-const API_BASE = "http://10.39.102.109:8000";
+const API_BASE =
+  import.meta.env.VITE_API_BASE_URL ||
+  "https://face-attendance-system-1-zn1k.onrender.com";
 
 function apiFetch(url, options = {}) {
   const token = localStorage.getItem("faceattend_token");
