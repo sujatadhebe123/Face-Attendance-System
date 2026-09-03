@@ -1572,84 +1572,67 @@ tbody tr:hover {
   }
 }
   /* =========================================================
-   MOBILE SIDEBAR - KEEP TEACHER + LOGOUT VISIBLE
+   MOBILE SIDEBAR - TEACHER + LOGOUT FIX
    ========================================================= */
 
 @media (max-width: 700px) {
   .sidebar {
     height: 100dvh;
     min-height: 100dvh;
-
-    display: flex;
-    flex-direction: column;
-
     overflow-y: auto;
     overflow-x: hidden;
-
-    padding-bottom: 18px;
-
-    -webkit-overflow-scrolling: touch;
-  }
-
-  .side-nav {
-    flex-shrink: 0;
+    padding-bottom: 14px;
+    display: flex;
+    flex-direction: column;
   }
 
   .sidebar-spacer {
-    flex: 1 1 auto;
-    min-height: 20px;
+    flex: 1;
+    min-height: 15px;
   }
 
   .admin-card {
     width: 100%;
     flex-shrink: 0;
-
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-
+    display: grid !important;
+    grid-template-columns: 38px minmax(0, 1fr);
     gap: 10px;
-
-    margin-top: 12px;
-    padding: 15px 6px 8px;
-
-    border-top: 1px solid #ececf2;
+    align-items: center;
+    padding: 14px 6px 6px;
+    margin-top: 10px;
   }
 
   .admin-card > div:nth-child(2) {
-    display: block;
-    flex: 1;
+    display: block !important;
     min-width: 0;
   }
 
   .admin-card strong {
     overflow: hidden;
-    text-overflow: ellipsis;
     white-space: nowrap;
+    text-overflow: ellipsis;
   }
 
   .admin-card > button {
-    display: inline-flex !important;
+    display: flex !important;
+    grid-column: 1 / -1;
+
+    width: 100% !important;
+    min-height: 40px;
+
+    margin: 8px 0 0 0 !important;
+    padding: 0 12px !important;
+
     align-items: center;
     justify-content: center;
 
-    flex-shrink: 0;
+    border: 1px solid #ffd8df !important;
+    border-radius: 10px !important;
 
-    min-height: 36px;
-    padding: 0 12px !important;
-
-    margin-left: auto !important;
-
-    border: 1px solid #e7e8ef !important;
-    border-radius: 9px !important;
-
-    background: #fff !important;
+    background: #fff4f6 !important;
     color: #d45268 !important;
 
     font-size: 12px !important;
     font-weight: 700 !important;
-    cursor: pointer;
   }
-
 }
-
