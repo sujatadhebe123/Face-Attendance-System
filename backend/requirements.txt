@@ -1,0 +1,9 @@
+fastapi==0.141.1
+uvicorn==0.41.0
+SQLAlchemy==2.0.52
+psycopg2-binary==2.9.12
+pydantic==2.13.4
+python-multipart==0.0.32
+python-dotenv==1.2.3
+numpy==2.4.4
+opencv-contrib-python-headless
