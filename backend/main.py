@@ -23,21 +23,27 @@ app = FastAPI(
     version="1.3.0"
 )
 
+# ---------------------------------------------------------
 # Create database tables
+# ---------------------------------------------------------
 Base.metadata.create_all(bind=engine)
 
 
 # ---------------------------------------------------------
 # CORS Configuration
 # ---------------------------------------------------------
-# localhost / 127.0.0.1 -> laptop development
-# 10.39.102.109        -> phone accessing frontend through Wi-Fi
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
+        # Local frontend
         "http://localhost:5173",
         "http://127.0.0.1:5173",
+
+        # Mobile testing on same Wi-Fi
         "http://10.39.102.109:5173",
+
+        # Deployed Vercel frontend
+        "https://face-attendance-system-203qe5fd0-sujata-dhebe.vercel.app",
     ],
     allow_credentials=True,
     allow_methods=["*"],
